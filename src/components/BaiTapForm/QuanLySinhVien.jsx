@@ -5,7 +5,7 @@ import DanhSachSinhVien from './DanhSachSinhVien'
 export default class QuanLySinhVien extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container overflow-hidden">
                 <DangKySinhVien />
                 <DanhSachSinhVien />
             </div>

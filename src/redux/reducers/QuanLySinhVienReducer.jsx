@@ -1,8 +1,10 @@
 import {
   CAP_NHAT_SINH_VIEN,
   CHINH_SUA_SINH_VIEN,
+  HANDLE_SEARCH,
   // HANDLE_INPUT,
   THEM_SINH_VIEN,
+  TIM_KIEM,
   XOA_SINH_VIEN,
 } from "../types/QuanLySinhVienType";
 
@@ -28,6 +30,15 @@ const initialState = {
     email: "",
   },
   sinhVienChinhSua: {
+    maSV: "",
+    hoTenSV: "",
+    soDienThoai: "",
+    email: "",
+  },
+  mangSinhVienTimKiem: [
+    // { maSV: "111", hoTenSV: "hahaha", soDienThoai: "111111", email: "1111111" },
+  ],
+  sinhVienTimKiem: {
     maSV: "",
     hoTenSV: "",
     soDienThoai: "",
@@ -66,6 +77,20 @@ export const QuanLySinhVienReducer = (state = initialState, action) => {
       ];
       state.mangSinhVien[index] = action.sinhVien;
       state.mangSinhVien = [...state.mangSinhVien];
+      return { ...state };
+    }
+
+    case HANDLE_SEARCH: {
+      state.sinhVienTimKiem = action.sinhVienTimKiem;
+      return { ...state };
+    }
+
+    case TIM_KIEM: {
+      let arrSV = state.mangSinhVien.filter(
+        (sv) => sv.maSV === action.sinhVienTimKiem.maSV
+      );
+      state.mangSinhVienTimKiem = arrSV;
+      state.mangSinhVienTimKiem = [...state.mangSinhVienTimKiem];
       return { ...state };
     }
     default:

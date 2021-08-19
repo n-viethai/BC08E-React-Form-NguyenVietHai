@@ -2,7 +2,9 @@ import {
   CAP_NHAT_SINH_VIEN,
   CHINH_SUA_SINH_VIEN,
   HANDLE_INPUT,
+  HANDLE_SEARCH,
   THEM_SINH_VIEN,
+  TIM_KIEM,
   XOA_SINH_VIEN,
 } from "../types/QuanLySinhVienType";
 
@@ -40,3 +42,17 @@ export const capNhatSinhVienAction = (sinhVien) => {
     sinhVien
   };
 };
+
+export const handleSearchInput = (sinhVienTimKiem) => {
+  return {
+    type: HANDLE_SEARCH,
+    sinhVienTimKiem
+  }
+}
+
+export const timKiemSinhVien = (sinhVienTimKiem) => {
+  return {
+    type: TIM_KIEM,
+    sinhVienTimKiem
+  }
+}
