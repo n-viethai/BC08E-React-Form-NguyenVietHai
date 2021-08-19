@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { xoaSinhVienAction } from "../../redux/actions/QuanLySinhVienAction";
+import {
+  chinhSuaSinhVienAction,
+  xoaSinhVienAction,
+} from "../../redux/actions/QuanLySinhVienAction";
 
 class DanhSachSinhVien extends Component {
   renderTableSinhVien = () => {
@@ -21,7 +24,14 @@ class DanhSachSinhVien extends Component {
             >
               Xóa
             </button>
-            <button className="btn btn-outline-warning">Chỉnh sửa</button>
+            <button
+              className="btn btn-outline-warning"
+              onClick={() => {
+                this.props.dispatch(chinhSuaSinhVienAction(sinhVien));
+              }}
+            >
+              Chỉnh sửa
+            </button>
           </td>
         </tr>
       );

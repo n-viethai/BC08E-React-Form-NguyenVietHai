@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from "redux";
-import QuanLySinhVienReducer from "./reducers/QuanLySinhVienReducer";
+import { QuanLySinhVienReducer } from "./reducers/QuanLySinhVienReducer";
 
 const rootReducer = combineReducers({
-    QuanLySinhVienReducer
+  QuanLySinhVienReducer,
 });
 
 export const store = createStore(rootReducer);

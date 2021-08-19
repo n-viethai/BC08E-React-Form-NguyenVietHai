@@ -1,4 +1,5 @@
 import {
+  CAP_NHAT_SINH_VIEN,
   CHINH_SUA_SINH_VIEN,
   HANDLE_INPUT,
   THEM_SINH_VIEN,
@@ -26,8 +27,16 @@ export const xoaSinhVienAction = (maSV) => {
   };
 };
 
-export const chinhSuaSinhVienAction = () => {
+export const chinhSuaSinhVienAction = (sinhVien) => {
   return {
     type: CHINH_SUA_SINH_VIEN,
+    sinhVien
+  };
+};
+
+export const capNhatSinhVienAction = (sinhVien) => {
+  return {
+    type: CAP_NHAT_SINH_VIEN,
+    sinhVien
   };
 };
